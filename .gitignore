@@ -1,0 +1,7 @@
+.DS_Store
+dist
+node_modules
+
+# nyc/instanbul test coverage
+.nyc_output/
+coverage/

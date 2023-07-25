@@ -1,0 +1,47 @@
+{
+  "name": "@marble-seeds/backend-module-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --declaration",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
+    "coverage": "nyc npm run test",
+    "coverage-report": "nyc  --reporter=html npm run test",
+    "lint": "ts-standard -p tsconfig.eslint.json",
+    "lint:fix": "ts-standard --fix --project tsconfig.eslint.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/latteware/marble-backend-module-template.git"
+  },
+  "author": "Siedrix",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.45.0",
+    "eslint-config-standard-with-typescript": "^37.0.0",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "pre-commit": "^1.2.2",
+    "ts-node": "^10.9.1",
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.1.6"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "ts-standard": {
+    "project": "tsconfig.eslint.json"
+  },
+  "dependencies": {
+    "@marble-seeds/api": "^0.3.1",
+    "@marble-seeds/record-tape": "^0.8.0-rc.1",
+    "@marble-seeds/task": "^1.0.0-rc.5",
+    "@marble-seeds/task-runner": "^0.1.0"
+  }
+}
