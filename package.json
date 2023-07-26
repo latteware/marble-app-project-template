@@ -40,8 +40,8 @@
   },
   "dependencies": {
     "@marble-seeds/api": "^0.3.1",
-    "@marble-seeds/record-tape": "^0.8.0-rc.1",
+    "@marble-seeds/record-tape": "^0.8.0-rc.3",
     "@marble-seeds/task": "^1.0.0-rc.5",
-    "@marble-seeds/task-runner": "^0.1.0"
+    "@marble-seeds/task-runner": "^0.1.1"
   }
 }

@@ -1,3 +1,4 @@
+import path from 'path'
 import { TaskRunner } from '@marble-seeds/task-runner'
 
 import { status } from './tasks/status'
@@ -5,7 +6,8 @@ import { status } from './tasks/status'
 const runner = new TaskRunner()
 
 // ToDo: Make set Tape resillient so it can run with no tape found
-// runner.setTapeFolder('../logs')
+const logsFolder = path.resolve(__dirname, '../logs')
+runner.setTapeFolderSync(logsFolder)
 
 runner.load('status', status)
 

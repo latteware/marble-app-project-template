@@ -5,3 +5,6 @@ node_modules
 # nyc/instanbul test coverage
 .nyc_output/
 coverage/
+
+# logs
+logs/*.log
