@@ -20,7 +20,8 @@ const cli = async function (): Promise<void> {
     const listItems: string = runner.getTaskList().join(' ,')
     console.log(`Available tasks: ${listItems}`)
   } else if (action === 'run') {
-    await runner.run(taskName, args)
+    const res = await runner.run(taskName, args)
+    console.log('Success:', res)
   } else if (action === 'clean-log') {
     await runner.cleanLog(taskName)
   } else {
