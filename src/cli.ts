@@ -1,3 +1,4 @@
+import './lib/config'
 import path from 'path'
 import { TaskRunner } from '@marble-seeds/task-runner'
 
@@ -17,8 +18,11 @@ const cli = async function (): Promise<void> {
   console.log('Args: ', { action, taskName, args })
 
   if (action === 'list') {
-    const listItems: string = runner.getTaskList().join(' ,')
-    console.log(`Available tasks: ${listItems}`)
+    const listItems: string[] = runner.getTaskList()
+    console.log('Available tasks:')
+    listItems.forEach(taskName => {
+      console.log(`- ${taskName}`)
+    })
   } else if (action === 'run') {
     const res = await runner.run(taskName, args)
     console.log('Success:', res)
