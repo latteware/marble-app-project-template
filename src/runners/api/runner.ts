@@ -1,6 +1,7 @@
+import '../../lib/config'
 import { server, Route, Router } from '@marble-seeds/api'
 
-import { status } from './tasks/status'
+import { status } from '../../tasks/status'
 
 const srv = server()
 
@@ -11,14 +12,12 @@ const routers = new Router({
       method: 'get',
       path: '/status'
     })
-  ],
-  prefix: '/api'
+  ]
 })
 
 routers.add(srv)
 
-srv.listen({
-  port: 8080
-}, function () {
-  console.log('running on port 8080')
-})
+const apiPort = 3000
+
+srv.listen(apiPort)
+console.log(`Api started: <${apiPort}>`)

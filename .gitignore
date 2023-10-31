@@ -8,3 +8,6 @@ coverage/
 
 # logs
 logs/*.log
+
+# Config
+.env
