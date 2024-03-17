@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { Sample } from '../../src/index'
+import { Sample } from '../../index'
 
 describe('Sample', function () {
   it('Should return config', async function () {
